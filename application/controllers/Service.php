@@ -307,47 +307,6 @@ class Service extends CI_Controller
         $this->pdf->load_view('service/laporan', $data);
     }
 
-    public function logService()
-    {
-        $data = [
-            'title' => $this->title,
-            'log'   => $this->service_model->getLog()
-        ];
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('service/logService', $data);
-        $this->load->view('templates/footer');
-        $this->load->view('service/script');
-    }
-
-    public function getLog()
-    {
-        $result = $this->service_model->getDataLog();
-        $no = $_POST['start'];
-        $data = [];
-        foreach ($result as $r) {
-            $keterangan = '<span class="d-inline-block text-truncate">' . $r->keterangan . ',</span>';
-            $waktu = "pada " . date('d-m-Y H:i:s', strtotime($r->created_at));
-
-            $row = [];
-            $row[] = ++$no;
-            $row[] = $keterangan;
-            $row[] = $waktu;
-            $data[] = $row;
-        }
-
-        $ouput = [
-            'draw' => $_POST['draw'],
-            'recordsTotal'      => $this->service_model->count_all_log(),
-            'recordsFiltered'   => $this->service_model->count_filtered_log(),
-            'data'              => $data
-        ];
-
-        echo json_encode($ouput);
-    }
-
     private function _rules()
     {
         $this->form_validation->set_rules('tanggal', 'Tanggal Service', 'trim|required', [

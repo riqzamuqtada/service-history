@@ -71,6 +71,13 @@
             </div>
 
             <!-- Nav Item - Profile -->
+            <li class="nav-item  <?php if($this->uri->segment(1) == 'log'){ echo "active"; } ?>">
+                <a class="nav-link" href="<?= base_url('log') ?>">
+                    <i class="fas fa-fw fa-history"></i>
+                    <span>Log Activity</span></a>
+            </li>
+
+            <!-- Nav Item - Profile -->
             <li class="nav-item  <?php if($this->uri->segment(1) == 'profile'){ echo "active"; } ?>">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-user-alt"></i>

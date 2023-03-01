@@ -17,7 +17,7 @@
         <div class="col">
             <div class="card">
                 <div class="row p-3">
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="form-group text-truncate">
                             <label for="bulan">Filter Bulan :</label>
                             <select class="form-control" name="bulan" id="bulan">
@@ -37,7 +37,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="form-group text-truncate">
                             <label for="tahun">Filter Tahun :</label>
                             <select class="form-control" name="tahun" id="tahun">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col-lg-3">
                         <div class="form-group text-truncate">
                             <label for="filter_unit">Filter Unit :</label>
                             <select class="form-control" id="filter_unit" name="id_unit">
@@ -58,6 +58,17 @@
                                 <?php foreach ($unit as $u) : ?>
                                     <option value="<?= $u['id_unit'] ?>"><?= $u['nama_unit'] ?></option>
                                 <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group text-truncate">
+                            <label for="filter_status">Filter Status :</label>
+                            <select class="form-control" id="filter_status" name="status">
+                                <option value="">Pilih Status</option>
+                                <option value="0">Proses</option>
+                                <option value="1">Selesai</option>
                             </select>
                         </div>
                     </div>

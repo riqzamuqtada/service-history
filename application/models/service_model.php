@@ -9,6 +9,7 @@ class service_model extends CI_Model
     private function _getDataQuery()
     {
         $id_unit = $this->input->post('id_unit');
+        $status = $this->input->post('status');
         $bulan = $this->input->post('bulan');
         $tahun = $this->input->post('tahun');
 
@@ -25,6 +26,10 @@ class service_model extends CI_Model
 
         if (!empty($tahun)) {
             $this->db->like('s.tanggal', $tahun);
+        }
+
+        if (!empty($status)) {
+            $this->db->like('s.status_service', $status);
         }
 
         if (isset($_POST['search']['value'])) {
@@ -144,17 +149,8 @@ class service_model extends CI_Model
         return $this->db->get_where('log', ['id_service' => $id])->result_array();
     }
 
-    public function getLog()
-    {
-        return $this->db->get('log')->result_array();
-    }
-
     private function _getDataQueryLog()
     {
-        $id_unit = $this->input->post('id_unit');
-        $bulan = $this->input->post('bulan');
-        $tahun = $this->input->post('tahun');
-
         $this->db->from('log');
 
         if (isset($_POST['search']['value'])) {
@@ -193,8 +189,4 @@ class service_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    public function insertLog($status)
-    {
-        
-    }
 }

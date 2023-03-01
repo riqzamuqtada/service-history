@@ -22,6 +22,7 @@
                 "type": "POST",
                 "data": function(data) {
                     data.id_unit = $('#filter_unit').val()
+                    data.status = $('#filter_status').val()
                     data.bulan = $('#bulan').val()
                     data.tahun = $('#tahun').val()
                 }
@@ -37,7 +38,7 @@
             "serverSide": true,
             "order": [],
             "ajax": {
-                "url": "<?= base_url('service/getLog') ?>",
+                "url": "<?= base_url('Log/getLog') ?>",
                 "type": "POST",
             },
             "columnDefs": [{
@@ -108,6 +109,11 @@
 
         // filter tanggal akhir
         $('#tahun').on('change', function() {
+            table.ajax.reload()
+        })
+
+        // filter unit
+        $('#filter_status').on('change', function() {
             table.ajax.reload()
         })
 

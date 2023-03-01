@@ -20,18 +20,21 @@
         }
 
         .table-header {
-            background-color: gray;
+            background-color: darkgray;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
 
         table {
-            text-align: justify !important;
+            text-align: justify;
+            width: 100%;
+            margin-bottom: 1rem;
+            border-collapse: collapse;
         }
 
         tr {
-            vertical-align: top !important;
+            vertical-align: top;
         }
     </style>
 </head>
@@ -40,7 +43,7 @@
     <div>
         <h2>Laporan Data Service</h1>
             <br>
-            <hr>
+            <br>
             <hr>
             <br>
     </div>
