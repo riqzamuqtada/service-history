@@ -3,11 +3,11 @@
 
     <!-- Page Heading -->
     <div class="d-flex align-items-center justify-content-between">
-        <a class="btn btn-primary text-truncate mr-1" href="<?= base_url('users/tambah') ?>">
+        <a class="btn btn-primary shadow text-truncate mr-1" href="<?= base_url('users/tambah') ?>">
             <i class="fas fa-plus-square mr-1"></i>
             Tambah User
         </a>
-        <a class="btn btn-warning text-truncate ml-1"  href="<?= base_url('users/cetak') ?>" target="_blank">
+        <a class="btn btn-warning shadow text-truncate ml-1"  href="<?= base_url('users/cetak') ?>" target="_blank">
             <i class="fas fa-print mr-1"></i>
             Cetak User
         </a>
@@ -15,7 +15,7 @@
 
     <div class="row mt-4">
         <div class="col">
-            <div class="table-responsive card p-3">
+            <div class="table-responsive card shadow p-3">
                 <table class="table table-hover" id="tableUser">
                     <thead class="thead-light">
                         <tr class="text-truncate">

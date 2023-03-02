@@ -1,5 +1,5 @@
 <script>
-    $(document).ready(function() {
+    $(function() {
 
         const Toast = Swal.mixin({
             toast: true,
@@ -13,29 +13,27 @@
             }
         })
 
-        var table = $('#tableService').DataTable({
+        var table = $('#tablePenempatan').DataTable({
             "processing": true,
             "serverSide": true,
             "order": [],
             "ajax": {
-                "url": "<?= base_url('service/getdata') ?>",
+                "url": "<?= base_url('penempatan/getdata') ?>",
                 "type": "POST",
                 "data": function(data) {
                     data.id_unit = $('#filter_unit').val()
-                    data.status = $('#filter_status').val()
-                    data.bulan = $('#bulan').val()
-                    data.tahun = $('#tahun').val()
+                    data.awal = $('#tgl-awal').val()
+                    data.akhir = $('#tgl-akhir').val()
                 }
             },
             "columnDefs": [{
-                "targets": [0, 5, 6],
+                "targets": [0, 5],
                 "orderable": false,
             }, ],
         });
 
-
         // confirm hapus
-        $('#tableService').on('click', '.btn-delete', function() {
+        $('#tablePenempatan').on('click', '.btn-delete', function() {
 
             const url = $(this).data('url');
             const id = $(this).data('id');
@@ -53,7 +51,7 @@
 
                     $.ajax({
                         method: 'POST',
-                        url: url + 'service/delete',
+                        url: url + 'penempatan/delete',
                         data: {
                             id: id
                         },
@@ -75,12 +73,12 @@
         });
 
         // tombol update
-        $('#tableService').on('click', '.btn-update', function() {
+        $('#tablePenempatan').on('click', '.btn-update', function() {
             document.location.href = $(this).data('url')
         })
 
         // tombol detail
-        $('#tableService').on('click', '.btn-detail', function() {
+        $('#tablePenempatan').on('click', '.btn-detail', function() {
             document.location.href = $(this).data('url')
         })
 
@@ -89,34 +87,14 @@
             table.ajax.reload()
         })
 
-        // filter tanggal awal
-        $('#bulan').on('change', function() {
+        // filter tgl awal
+        $('#tgl-awal').on('change', function() {
+            table.ajax.reload()
+        })
+        // filter tgl akhir
+        $('#tgl-akhir').on('change', function() {
             table.ajax.reload()
         })
 
-        // filter tanggal akhir
-        $('#tahun').on('change', function() {
-            table.ajax.reload()
-        })
-
-        // filter status
-        $('#filter_status').on('change', function() {
-            console.log($('#filter_status').val());
-            table.ajax.reload()
-        })
-
-        $('#status_barang').change(function() {
-
-            if ($(this).is(':checked') === true) {
-                const value = $('#keterangan2').data('value')
-                $('#keterangan2').attr('hidden', false);
-                $('#keterangan2').val(value);
-            } else {
-                $('#keterangan2').attr('hidden', true);
-                $('#keterangan2').val(null);
-            }
-
-        });
-
-    });
+    })
 </script>

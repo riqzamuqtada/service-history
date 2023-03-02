@@ -26,7 +26,7 @@ class Log extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('service/logService', $data);
         $this->load->view('templates/footer');
-        $this->load->view('service/script');
+        $this->load->view('service/scriptLog');
     }
 
     public function getLog()
@@ -36,7 +36,7 @@ class Log extends CI_Controller
         $data = [];
         foreach ($result as $r) {
             $keterangan = '<span class="d-inline-block text-truncate">' . $r->keterangan . ',</span>';
-            $waktu = "pada " . date('d-m-Y H:i:s', strtotime($r->created_at));
+            $waktu = '<span class="text-truncate">pada '.date('d-m-Y H:i:s', strtotime($r->created_at)).'</span>';
 
             $row = [];
             $row[] = ++$no;

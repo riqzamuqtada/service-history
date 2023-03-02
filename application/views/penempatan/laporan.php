@@ -45,7 +45,7 @@
 
 <body>
     <div>
-        <h2>Laporan Data Service</h1>
+        <h2>Laporan Data Penempatan</h1>
             <br>
             <br>
             <hr>
@@ -56,22 +56,20 @@
             <thead>
                 <tr>
                     <th scope="col" class="text-truncate">#</th>
-                    <th scope="col" class="text-truncate">Tanggal Service</th>
+                    <th scope="col" class="text-truncate">Tanggal</th>
                     <th scope="col" class="text-truncate">Unit</th>
-                    <th scope="col" class="text-truncate">Barang Service</th>
-                    <th scope="col" class="text-truncate">Status</th>
+                    <th scope="col" class="text-truncate">Barang</th>
                     <th scope="col" class="text-truncate">Keterangan</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $i = 1;
-                foreach ($service as $s) : ?>
+                foreach ($penempatan as $s) : ?>
                     <tr>
                         <td><?= $i++ ?></td>
-                        <td><?= date('d-m-Y', strtotime($s['tanggal'])) ?></td>
+                        <td  class="text-truncate"><?= date('d-m-Y', strtotime($s['tanggal'])) ?></td>
                         <td><?= $s['nama_unit'] ?></td>
-                        <td><?= $s['nama_barang_service'] ?></td>
-                        <td><?= $s['status_service'] == 0 ? "Proses" : "Selesai" ?></td>
+                        <td><?= $s['barang'] ?></td>
                         <td><?= $s['keterangan'] ?></td>
                     </tr>
                 <?php endforeach ?>

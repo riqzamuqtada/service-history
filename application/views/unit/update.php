@@ -2,7 +2,7 @@
 <div class="container-fluid" style="min-height: 75vh;">
 
     <div class="row justify-content-center mt-5">
-        <div class="col-lg-8 card p-5">
+        <div class="col-lg-8 card shadow p-5">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center text-center mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Update Unit</h1>

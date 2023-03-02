@@ -16,6 +16,10 @@ class service_model extends CI_Model
         $this->db->from($this->table);
         $this->db->join('unit u', 's.id_unit=u.id_unit');
 
+        if (!empty($status)) {
+            $this->db->like('s.status_service', $status);
+        }
+
         if (!empty($id_unit)) {
             $this->db->where('s.id_unit', $id_unit);
         }
@@ -26,10 +30,6 @@ class service_model extends CI_Model
 
         if (!empty($tahun)) {
             $this->db->like('s.tanggal', $tahun);
-        }
-
-        if (!empty($status)) {
-            $this->db->like('s.status_service', $status);
         }
 
         if (isset($_POST['search']['value'])) {
@@ -151,11 +151,20 @@ class service_model extends CI_Model
 
     private function _getDataQueryLog()
     {
+        $tgl_awal = $this->input->post('awal');
+        $tgl_akhir = $this->input->post('akhir');
+
         $this->db->from('log');
+
+        if (!empty($tgl_awal)) {
+            $this->db->where('created_at >=', $tgl_awal." 00:00:00");
+        }
+        if (!empty($tgl_akhir)) {
+            $this->db->where('created_at <=', $tgl_akhir." 25:60:60");
+        }
 
         if (isset($_POST['search']['value'])) {
             $this->db->like('keterangan', $_POST['search']['value']);
-            $this->db->or_like('created_at', $_POST['search']['value']);
         }
 
         if (isset($_POST['order'])) {
@@ -188,5 +197,4 @@ class service_model extends CI_Model
         $this->db->from('log');
         return $this->db->count_all_results();
     }
-
 }

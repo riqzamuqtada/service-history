@@ -5,7 +5,7 @@
         <a href="<?= base_url('notes') ?>">
             <i class="fas fa-lg fa-arrow-left"></i>
         </a>
-        <a class="btn btn-warning text-truncate text-light mx-2"  href="<?= base_url('notes/cetak/' . $detail['id_notes']) ?>">
+        <a class="btn shadow btn-warning text-truncate text-light mx-2"  href="<?= base_url('notes/cetak/' . $detail['id_notes']) ?>">
             <i class="fas fa-print mr-1"></i>
             Cetak Catatan
         </a>
@@ -13,7 +13,7 @@
 
     <div class="row">
         <div class="col-lg-10 mx-auto">
-            <div class="card">
+            <div class="card shadow">
                 <div class="card-body">
                     <h3 class="card-title text-center"><?= $detail['judul'] ?></h3>
                     <hr>

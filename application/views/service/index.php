@@ -2,11 +2,11 @@
 <div class="container-fluid mb-5" style="min-height: 75vh;">
     <form action="<?= base_url('service/cetak') ?>" target="_blank" method="post">
     <div class="d-flex align-items-center justify-content-between">
-        <a class="btn btn-primary text-truncate mx-2" href="<?= base_url('service/tambah') ?>">
+        <a class="btn shadow btn-primary text-truncate mx-2" href="<?= base_url('service/tambah') ?>">
             <i class="fas fa-plus-square mr-1"></i>
             Tambah Service
         </a>
-        <button type="submit" class="btn btn-warning text-truncate text-light mx-2" id="cetak">
+        <button type="submit" class="btn shadow btn-warning text-truncate text-light mx-2" id="cetak">
             <i class="fas fa-print mr-1"></i>
             Cetak Service
         </button>
@@ -15,9 +15,9 @@
     <!-- Filter -->
     <div class="row mt-4">
         <div class="col">
-            <div class="card">
+            <div class="card shadow">
                 <div class="row p-3">
-                    <div class="col-lg-3">
+                    <div class="col-md-3">
                         <div class="form-group text-truncate">
                             <label for="bulan">Filter Bulan :</label>
                             <select class="form-control" name="bulan" id="bulan">
@@ -37,7 +37,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-md-3">
                         <div class="form-group text-truncate">
                             <label for="tahun">Filter Tahun :</label>
                             <select class="form-control" name="tahun" id="tahun">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3">
+                    <div class="col-md-3">
                         <div class="form-group text-truncate">
                             <label for="filter_unit">Filter Unit :</label>
                             <select class="form-control" id="filter_unit" name="id_unit">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3">
+                    <div class="col-md-3">
                         <div class="form-group text-truncate">
                             <label for="filter_status">Filter Status :</label>
                             <select class="form-control" id="filter_status" name="status">
@@ -75,7 +75,7 @@
                 </div>
             </div>
     </form>
-                <div class="card mt-2 table-responsive p-3">
+                <div class="card shadow mt-2 table-responsive p-3">
                     <table class="table table-hover" id="tableService">
                         <thead class="thead-light">
                             <tr class="text-truncate">

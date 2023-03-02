@@ -3,11 +3,11 @@
 
     <!-- Page Heading -->
     <div class="d-flex align-items-center justify-content-between">
-        <a class="btn btn-primary text-truncate mr-1" href="<?= base_url('notes/tambah') ?>">
+        <a class="btn shadow btn-primary text-truncate mr-1" href="<?= base_url('notes/tambah') ?>">
             <i class="fas fa-plus-square mr-1"></i>
             Tambah Catatan
         </a>
-        <a class="btn btn-warning text-truncate ml-1"  href="<?= base_url('notes/cetak') ?>" target="_blank">
+        <a class="btn shadow btn-warning text-truncate ml-1"  href="<?= base_url('notes/cetak') ?>" target="_blank">
             <i class="fas fa-print mr-1"></i>
             Cetak Catatan
         </a>
@@ -15,7 +15,7 @@
 
     <div class="row mt-4">
         <div class="col">
-            <div class="card table-responsive p-3">
+            <div class="card shadow table-responsive p-3">
                 <table class="table table-hover" id="tableNotes">
                     <thead class="thead-light">
                         <tr class="text-truncate">

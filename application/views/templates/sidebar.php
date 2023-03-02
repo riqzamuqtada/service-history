@@ -47,6 +47,14 @@
             </li>
 
             <!-- Nav Item - Collapse Menu -->
+            <li class="nav-item  <?php if($this->uri->segment(1) == 'penempatan'){ echo "active"; } ?>">
+                <a class="nav-link collapsed" href="<?= base_url('penempatan') ?>">
+                    <i class="fas fa-fw fa-wrench"><sup class="ml-1">2</sup></i>
+                    <span>Penempatan</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Collapse Menu -->
             <li class="nav-item <?php if($this->uri->segment(1) == 'users'){ echo "active"; } ?>">
                 <a class="nav-link collapsed" href="<?= base_url('users') ?>">
                     <i class="fas fa-fw fa-users"></i>
