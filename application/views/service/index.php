@@ -67,7 +67,7 @@
                             <label for="filter_status">Filter Status :</label>
                             <select class="form-control" id="filter_status" name="status">
                                 <option value="">Pilih Status</option>
-                                <option value="0">Proses</option>
+                                <option value="2">Proses</option>
                                 <option value="1">Selesai</option>
                             </select>
                         </div>

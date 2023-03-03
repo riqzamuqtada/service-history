@@ -17,7 +17,7 @@ class service_model extends CI_Model
         $this->db->join('unit u', 's.id_unit=u.id_unit');
 
         if (!empty($status)) {
-            $this->db->like('s.status_service', $status);
+            $this->db->like('s.status_service', strval($status));
         }
 
         if (!empty($id_unit)) {

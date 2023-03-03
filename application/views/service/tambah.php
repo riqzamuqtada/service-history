@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <label for="status" class="text-truncate">Status :</label>
                             <select class="custom-select" id="status" name="status">
-                                <option value="0">Proses</option>
+                                <option value="2">Proses</option>
                                 <option value="1">Selesai</option>
                             </select>
                         </div>

@@ -37,8 +37,8 @@ class Service extends CI_Controller
         $no = $_POST['start'];
         $data = [];
         foreach ($result as $r) {
-            $color = $r->status_service == 0 ? "warning" : "primary";
-            $field = $r->status_service == 0 ? "Proses" : "Selesai";
+            $color = $r->status_service == 2 ? "warning" : "primary";
+            $field = $r->status_service == 2 ? "Proses" : "Selesai";
             $tgl = date('d-m-Y', strtotime($r->tanggal));
             $keterangan = '<span class="d-inline-block text-truncate" style="max-width: 150px;">' . $r->keterangan . '</span>';
             $status = '<span class="badge badge-' . $color . '">' . $field . '</span>';
@@ -171,7 +171,7 @@ class Service extends CI_Controller
             'keterangan_barang_diganti' => !empty(set_value('keterangan2')) ? set_value('keterangan2') : $data['service']['keterangan_barang_diganti']
         ];
         $data['checked2'] = $data['service']['tempat_perbaikan'] === "0" ? "" : "checked";
-        $data['select'] = $data['service']['status_service'] === "0" ? "" : "selected";
+        $data['select'] = $data['service']['status_service'] === "2" ? "" : "selected";
         $data['checked1'] = $data['service']['status_barang'] === "0" ? "" : "checked";
         $data['hidden'] = $data['service']['status_barang'] === "0" ? "hidden" : "";
 
@@ -190,7 +190,7 @@ class Service extends CI_Controller
         $unit = $this->service_model->getUnitById($this->input->post('unit'));
         // status
         $status = $this->input->post('status') == $service['status_service'] ? "" : "status ";
-        $update =  $this->input->post('status') == 0 ? "proses" : "selesai";
+        $update =  $this->input->post('status') == 2 ? "proses" : "selesai";
         $menjadi = $this->input->post('status') == $service['status_service'] ? "" : " menjadi " . $update;
 
         $status_barang = $this->input->post('status_barang') === 'Y' ? '1' : '0';
