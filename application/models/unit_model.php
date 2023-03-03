@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class unit_model extends CI_Model
+class Unit_model extends CI_Model
 {
     var $table = "unit";
     var $order = [ '', 'code_unit', 'nama_unit', 'created_at', 'update_at'];

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class notes_model extends CI_Model
+class Notes_model extends CI_Model
 {
     var $table = "notes";
     var $order = ['', 'judul', 'catatan', 'created_at'];

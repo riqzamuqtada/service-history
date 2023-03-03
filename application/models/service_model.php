@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class service_model extends CI_Model
+class Service_model extends CI_Model
 {
     var $table = "service s";
     var $order = ['', 's.tanggal', 'u.nama_unit', 's.nama_barang_service', 's.keterangan'];

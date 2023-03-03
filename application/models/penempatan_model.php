@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class penempatan_model extends CI_Model
+class Penempatan_model extends CI_Model
 {
     var $table = "penempatan p";
     var $order = ['', 'p.tanggal', 'u.nama_unit', 'p.barang', 'p.keterangan'];

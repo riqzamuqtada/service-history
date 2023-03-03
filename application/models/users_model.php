@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class users_model extends CI_Model
+class Users_model extends CI_Model
 {
     var $table = "user";
     var $column_order = ['id_user', 'nama_lengkap', 'nama_user', 'created_at', 'update_at'];
@@ -29,7 +29,7 @@ class users_model extends CI_Model
     public function getDataTable()
     {
         $this->_getDataQuery();
-        if($_POST['length'] != 1){
+        if ($_POST['length'] != 1) {
             $this->db->limit($_POST['length'], $_POST['start']);
         }
         $query = $this->db->get();
